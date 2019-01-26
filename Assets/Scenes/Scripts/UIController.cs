@@ -29,17 +29,17 @@ public class UIController : MonoBehaviour
     //    _fillness = fillness;
     //}
 
-    public void SetFillness(float newFillness)
-    {
-        LeanTween.value(gameObject, _fillness, newFillness, 2f)
-            .setOnUpdate((float val) => {
-                HealthBar.fillAmount = val; 
-            })
-          .setOnComplete(() =>
-          {
-              CheckState(); // Set Smile
-          });
-    }
+    //public void SetFillness(float newFillness)
+    //{
+    //    LeanTween.value(gameObject, _fillness, newFillness, 2f)
+    //        .setOnUpdate((float val) => {
+    //            HealthBar.fillAmount = val; 
+    //        })
+    //      .setOnComplete(() =>
+    //      {
+    //          CheckState(); // Set Smile
+    //      });
+    //}
 
     public void SetParametres(Dog currentDog)
     {
