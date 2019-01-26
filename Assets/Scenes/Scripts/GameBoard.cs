@@ -11,6 +11,7 @@ public class GameBoard : MonoBehaviour {
     public InputController InputController;
     public Flea Flea;
     public GameObject WorldObject;
+    public LooseWindowController LooseWindow;
 
     private float _timer = 0.0f;
     private float _spawnTime = 4.0f;
@@ -35,20 +36,27 @@ public class GameBoard : MonoBehaviour {
 
     private void OnBeginDrag()
     {
-
+        if (Flea.CanJump())
+        {
+            Flea.SetArrowVisible(true);
+        }
     }
 
     private void OnUpdateDrag(Vector3 direction)
     {
-
+        Flea.SetArrowDirection(direction);
     }
 
     private void OnEndDrag(Vector3 direction)
     {
+        Flea.SetArrowVisible(false);
         Debug.Log("OnEndDrag: " + direction);
-        Flea.transform.SetParent(WorldObject.transform, true);
-        Flea.JumpIntoDirection(direction);
-        CameraFollower.target = Flea.transform;
+        if (Flea.CanJump())
+        {
+            Flea.transform.SetParent(WorldObject.transform, true);
+            Flea.JumpIntoDirection(direction);
+            CameraFollower.target = Flea.transform;
+        }
     }
 	
 	// Update is called once per frame
@@ -79,6 +87,13 @@ public class GameBoard : MonoBehaviour {
 
     private void OnFleaStoppedWithoutDog()
     {
+        GameOver();
+    }
+
+    private void GameOver()
+    {
         Debug.Log("GAMEOVER");
+        LooseWindow.Show();
+        CameraFollower.target = null;
     }
 }

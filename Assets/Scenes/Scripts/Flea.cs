@@ -16,15 +16,18 @@ public class Flea : MonoBehaviour {
     private Rigidbody2D _rigidBody;
     private BoxCollider2D _collider;
     private Dog _prevDog;
+    private float _flyingTime;
     public SpriteRenderer Renderer;
     public Action<Dog> OnFleaWantsToAttachToDog;
     public Action OnFleaStoppedWithoutDog;
+    public GameObject Arrow;
 
     private void Awake()
     {
         _state = State.Attached;
         _rigidBody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<BoxCollider2D>();
+        Arrow.SetActive(false);
     }
 
     // Use this for initialization
@@ -35,10 +38,14 @@ public class Flea : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Renderer.sortingOrder = -(int)(transform.position.y * 100.0f);
-        if (_state == State.Flying && OnFleaStoppedWithoutDog != null && _rigidBody.velocity.magnitude < 1.0f)
+        if (_state == State.Flying)
         {
-            OnFleaStoppedWithoutDog();
-            _state = State.Dead;
+            _flyingTime += Time.deltaTime;
+            if (_flyingTime > 1.0f && OnFleaStoppedWithoutDog != null && _rigidBody.velocity.magnitude < 1.0f)
+            {
+                OnFleaStoppedWithoutDog();
+                _state = State.Dead;
+            }
         }
     }
 
@@ -47,12 +54,14 @@ public class Flea : MonoBehaviour {
         _state = State.Attached;
         transform.SetParent(dog.transform);
         transform.localPosition = Vector3.zero;
+        _rigidBody.velocity = Vector2.zero;
         _rigidBody.simulated = false;
         _prevDog = dog;
     }
 
     public void JumpIntoDirection(Vector2 direction)
     {
+        _flyingTime = 0.0f;
         _state = State.Flying;
         _rigidBody.simulated = true;
         _rigidBody.AddForce(direction * 1500.0f);
@@ -66,5 +75,22 @@ public class Flea : MonoBehaviour {
         {
             OnFleaWantsToAttachToDog(dog);
         }
+    }
+
+    public bool CanJump()
+    {
+        return _state == State.Attached;
+    }
+
+    public void SetArrowVisible(bool visible)
+    {
+        Arrow.gameObject.SetActive(visible);
+        Arrow.transform.localScale = Vector3.zero;
+    }
+
+    public void SetArrowDirection(Vector3 direction)
+    {
+        Arrow.transform.localScale = new Vector3(1.0f, direction.magnitude * 50.0f, 1.0f);
+        Arrow.transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
     }
 }
