@@ -34,3 +34,10 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+#mac
+.DS_Store
+
+#Unity local scenes
+scn_dev_*.unity
+scn_dev_*.unity.meta
