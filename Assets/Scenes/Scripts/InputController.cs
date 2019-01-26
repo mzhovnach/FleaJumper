@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,11 +12,12 @@ public class InputController : MonoBehaviour {
 	}
 
     private InputState _state;
+    private Vector3 _direction;
+    private Vector3 _startDragPoint;
 
-    public void OnBeginDrag()
-    {
-
-    }
+    public Action OnBeginDrag;
+    public Action<Vector3> OnUpdateDrag;
+    public Action<Vector3> OnEndDrag;
 
     private void Awake()
     {
@@ -29,18 +31,35 @@ public class InputController : MonoBehaviour {
             if (Input.GetMouseButton(0))
             {
                 _state = InputState.Dragging;
+                _startDragPoint = Input.mousePosition;
                 // begin drag
+                if (OnBeginDrag != null)
+                {
+                    OnBeginDrag();
+                }
             }
         }
         else if (_state == InputState.Dragging)
         {
+            _direction = (_startDragPoint - Input.mousePosition);
+            _direction.x /= (float)Screen.width;
+            _direction.y /= (float)Screen.height;
             if (!Input.GetMouseButton(0))
             {
                 // finish drag
+                if (OnEndDrag != null)
+                {
+                    OnEndDrag(_direction);
+                }
+                _state = InputState.Idle;
             }
             else
             {
                 // update drag
+                if (OnUpdateDrag != null)
+                {
+                    OnUpdateDrag(_direction);
+                }
             }
         }
 	}
