@@ -44,7 +44,7 @@ public class UIController : MonoBehaviour
     public void SetParametres(Dog currentDog)
     {
         _currentDog = currentDog;
-        _fillness = _currentDog._fury;
+        //_fillness = _currentDog._fury;
         HealthBar.fillAmount = _fillness / 100;
         CheckState();
     }
