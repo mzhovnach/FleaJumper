@@ -12,7 +12,7 @@ public class InputController : MonoBehaviour {
 
     private InputState _state;
 
-    public OnBeginDrag()
+    public void OnBeginDrag()
     {
 
     }
