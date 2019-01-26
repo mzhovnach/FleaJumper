@@ -16,6 +16,7 @@ public class BackgroundScroller : MonoBehaviour {
     // minus speed means scroll in opposite direction
     public void SetScrollSpeed(float speed)
     {
+        Debug.Log(speed);
         _speed = speed;
     }
 	
