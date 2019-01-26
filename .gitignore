@@ -41,3 +41,4 @@ sysinfo.txt
 #Unity local scenes
 scn_dev_*.unity
 scn_dev_*.unity.meta
+ProjectSettings/ProjectVersion.txt
