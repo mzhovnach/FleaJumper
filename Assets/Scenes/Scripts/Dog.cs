@@ -27,7 +27,7 @@ public class Dog : MonoBehaviour {
     //direction should be -1 or 1
     public void SetRandomSpeed(float direction)
     {
-        SetSpeed(Random.Range(1.0f, 2.0f) * direction);
+        SetSpeed(Random.Range(2.0f, 4.0f) * direction);
     }
 	
 	// Update is called once per frame
