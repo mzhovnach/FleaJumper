@@ -11,17 +11,18 @@ public class UIController : MonoBehaviour
         Normal = 1,
         Angry = 2,
         MaxAngry = 3,
-       
+
     }
 
-   
+    public Text Score;
     public DogState _state;
-    public float _fillness;
+    public float _fillness = 0;
+    [HideInInspector]
     public Dog _currentDog;
 
     [SerializeField] private Image HealthBar;
-    [SerializeField] private Image smile;
-    [SerializeField] private List<Sprite> smileList;
+    //[SerializeField] private Image smile;
+   // [SerializeField] private List<Sprite> smileList;
 
     //public Spirit(SpiritType type = SpiritType.None, float fillness = 0)
     //{
@@ -44,36 +45,37 @@ public class UIController : MonoBehaviour
     public void SetParametres(Dog currentDog)
     {
         _currentDog = currentDog;
-        //_fillness = _currentDog._fury;
-        HealthBar.fillAmount = _fillness / 100;
+        _fillness = _currentDog.fury;
+        
+        HealthBar.fillAmount = _fillness;
         CheckState();
     }
 
     private void CheckState()
     {
-        if (_fillness < 25)
-        {
-            _state = DogState.Normal;
-            if (smileList[3] != null)
-                smile.sprite = smileList[0];
-            else
-                smile.color = Color.black;
-        }
-        else if (_fillness < 50)
-        {
-            _state = DogState.Angry;
-            if (smileList[3] != null)
-                smile.sprite = smileList[1];
-            else
-                smile.color = Color.red;
-        }
-              else
-        {
-            _state = DogState.MaxAngry;
-            if (smileList[2] != null)
-                smile.sprite = smileList[2];
-            else
-                smile.color = Color.green;
-        }
+        //if (_fillness < 25)
+        //{
+        //    _state = DogState.Normal;
+        //    if (smileList[3] != null)
+        //        smile.sprite = smileList[0];
+        //    else
+        //        smile.color = Color.black;
+        //}
+        //else if (_fillness < 50)
+        //{
+        //    _state = DogState.Angry;
+        //    if (smileList[3] != null)
+        //        smile.sprite = smileList[1];
+        //    else
+        //        smile.color = Color.red;
+        //}
+        //      else
+        //{
+        //    _state = DogState.MaxAngry;
+        //    if (smileList[2] != null)
+        //        smile.sprite = smileList[2];
+        //    else
+        //        smile.color = Color.green;
+        //}
     }
 }

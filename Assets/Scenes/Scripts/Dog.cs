@@ -8,7 +8,9 @@ public class Dog : MonoBehaviour {
     private Rigidbody2D _rigidbody;
     public float _speed = 1.0f;
     public SpriteRenderer Renderer;
-
+    public float fury = 0;
+    private float milliseconds;
+    private float starttime = 0; 
     // Use this for initialization
     void Start () {
         _rigidbody.velocity = new Vector2(_speed, 0.0f);
@@ -31,9 +33,14 @@ public class Dog : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+        starttime += Time.deltaTime;
+
+       // milliseconds = (int)(Time.timeSinceLevelLoad * 1000f) % 1000;
+        fury = starttime/10;
+        
+    }
 
     public void SetSpeedMultiplier(float speedMult)
     {
