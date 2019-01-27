@@ -23,6 +23,7 @@ public class GameBoard : MonoBehaviour {
         _dogHost = null;
         Dog newDogHost = DogSpawner.SpawnRandomDog();
         newDogHost.transform.position = Vector3.zero;
+        newDogHost.UpdateSortingOrder();
         //newDogHost.SetSpeedMultiplier(0.1f);
         SetNewHost(newDogHost);
         _timer = _spawnTime;
@@ -66,7 +67,8 @@ public class GameBoard : MonoBehaviour {
         if (_timer >= _spawnTime)
         {
             _timer = 0.0f;
-            DogSpawner.SpawnRandomDog();
+            Dog newDog = DogSpawner.SpawnRandomDog();
+            newDog.OnFleaDroppedFromDog = OnFleaDroppedFromDog;
         }
         uiController.SetParametres(_dogHost);
     }
@@ -87,6 +89,11 @@ public class GameBoard : MonoBehaviour {
     }
 
     private void OnFleaStoppedWithoutDog()
+    {
+        GameOver();
+    }
+
+    private void OnFleaDroppedFromDog()
     {
         GameOver();
     }

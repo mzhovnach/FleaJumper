@@ -39,12 +39,14 @@ public class Flea : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Renderer.sortingOrder = -(int)((transform.position.y + 150.0f) * 10.0f);
+        Renderer.sortingOrder = -(int)((transform.position.y) * 100.0f);
+        Renderer.sortingOrder += 1;
         if (_state == State.Flying)
         {
             _flyingTime += Time.deltaTime;
             if (_flyingTime > 1.0f && OnFleaStoppedWithoutDog != null && _rigidBody.velocity.magnitude < 1.0f)
             {
+                _rigidBody.velocity = Vector2.zero;
                 OnFleaStoppedWithoutDog();
                 _state = State.Dead;
             }

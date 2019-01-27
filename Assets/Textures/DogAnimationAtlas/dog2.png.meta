@@ -115,10 +115,10 @@ TextureImporter:
       name: dog2_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 439
-        width: 167
-        height: 130
+        x: 30
+        y: 436
+        width: 174
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,10 +135,10 @@ TextureImporter:
       name: dog2_1
       rect:
         serializedVersion: 2
-        x: 256
-        y: 432
-        width: 166
-        height: 130
+        x: 253
+        y: 429
+        width: 172
+        height: 136
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
