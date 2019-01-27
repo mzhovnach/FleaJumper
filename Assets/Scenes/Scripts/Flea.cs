@@ -62,6 +62,7 @@ public class Flea : MonoBehaviour {
         _rigidBody.simulated = false;
         _prevDog = dog;
         _audioSuurce.Play();
+        dog.SetFleaOnDog(true);
     }
 
     public void JumpIntoDirection(Vector2 direction)

@@ -13,9 +13,14 @@ public class Dog : MonoBehaviour {
     private float milliseconds;
     private float starttime = 0;
 
-    bool _couldUpdateTimer;
+    private bool _fleaOnDog;
 
     public Action OnFleaDroppedFromDog;
+
+    private void Awake()
+    {
+        _fleaOnDog = false;
+    }
 
     // Use this for initialization
     void Start () {
@@ -23,7 +28,11 @@ public class Dog : MonoBehaviour {
         Vector3 scale = transform.localScale;
         scale.x = _rigidbody.velocity.x < 0 ? 1.0f : -1.0f;
         transform.localScale = scale;
-        _couldUpdateTimer = true;
+    }
+
+    public void SetFleaOnDog(bool isOnDog)
+    {
+        _fleaOnDog = isOnDog;
     }
 
     public void UpdateSortingOrder()
@@ -46,16 +55,15 @@ public class Dog : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (_couldUpdateTimer)
+        if (_fleaOnDog)
         {
-            starttime += Time.deltaTime;
-            // milliseconds = (int)(Time.timeSinceLevelLoad * 1000f) % 1000;
-            fury = starttime / 30;
+            starttime += Time.deltaTime / 10.0f;
+            fury = starttime;
 
-            if (fury >= 100.0f)
+            if (fury >= 1.0f)
             {
                 OnFleaDroppedFromDog();
-                _couldUpdateTimer = false;
+                _fleaOnDog = false;
             }
         }
     }
