@@ -21,6 +21,7 @@ public class DogSpawner : MonoBehaviour {
         pos += Camera.transform.position;
         dogObj.transform.position = pos;
         dogObj.SetRandomSpeed(side);
+        dogObj.UpdateSortingOrder();
         return dogObj;
     }
 

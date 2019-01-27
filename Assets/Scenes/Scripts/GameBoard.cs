@@ -22,7 +22,9 @@ public class GameBoard : MonoBehaviour {
         //create first dog
         _dogHost = null;
         Dog newDogHost = DogSpawner.SpawnRandomDog();
+        newDogHost.OnFleaDroppedFromDog = OnFleaDroppedFromDog;
         newDogHost.transform.position = Vector3.zero;
+        newDogHost.UpdateSortingOrder();
         //newDogHost.SetSpeedMultiplier(0.1f);
         SetNewHost(newDogHost);
         _timer = _spawnTime;
@@ -66,15 +68,23 @@ public class GameBoard : MonoBehaviour {
         if (_timer >= _spawnTime)
         {
             _timer = 0.0f;
-            DogSpawner.SpawnRandomDog();
+            Dog newDog = DogSpawner.SpawnRandomDog();
+            newDog.OnFleaDroppedFromDog = OnFleaDroppedFromDog;
         }
-        uiController.SetParametres(_dogHost);
+        if (_dogHost)
+        {
+            uiController.SetParametres(_dogHost);
+        }
     }
 
     public void SetNewHost(Dog newHostDog)
     {
         if (newHostDog != _dogHost)
         {
+            if (_dogHost != null)
+            {
+                _dogHost.SetFleaOnDog(false);
+            }
             _dogHost = newHostDog;
             CameraFollower.target = _dogHost.transform;
             Flea.AttachToDog(_dogHost);
@@ -87,6 +97,11 @@ public class GameBoard : MonoBehaviour {
     }
 
     private void OnFleaStoppedWithoutDog()
+    {
+        GameOver();
+    }
+
+    private void OnFleaDroppedFromDog()
     {
         GameOver();
     }
