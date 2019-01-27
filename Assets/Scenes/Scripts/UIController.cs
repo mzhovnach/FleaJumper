@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class UIController : MonoBehaviour
 {
@@ -14,15 +15,23 @@ public class UIController : MonoBehaviour
 
     }
 
-    public Text Score;
+    public GameObject Score;
     public DogState _state;
     public float _fillness = 0;
     [HideInInspector]
     public Dog _currentDog;
+    public double _score = 0;
+    public Text _scoreText;
 
     [SerializeField] private Image HealthBar;
+
+    private void Start()
+    {
+        // _score = 0;
+        //_scoreText = Score.GetComponent<Text>();
+    }
     //[SerializeField] private Image smile;
-   // [SerializeField] private List<Sprite> smileList;
+    // [SerializeField] private List<Sprite> smileList;
 
     //public Spirit(SpiritType type = SpiritType.None, float fillness = 0)
     //{
@@ -44,11 +53,16 @@ public class UIController : MonoBehaviour
 
     public void SetParametres(Dog currentDog)
     {
-        _currentDog = currentDog;
-        _fillness = _currentDog.fury;
-        
-        HealthBar.fillAmount = _fillness;
-        CheckState();
+        if (currentDog != null)
+        {
+            _currentDog = currentDog;
+            _fillness = _currentDog.fury;
+            HealthBar.fillAmount = _fillness;
+            _score += Time.deltaTime * 2;
+            Score.GetComponent<Text>().text = (Math.Truncate(_score)).ToString();
+        }
+        //_scoreText.text = (Math.Truncate(_score)).ToString();
+        //CheckState();
     }
 
     private void CheckState()
