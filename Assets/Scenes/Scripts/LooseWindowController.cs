@@ -17,6 +17,7 @@ public class LooseWindowController : MonoBehaviour {
 
     public void Show()
     {
+	    gameObject.GetComponent<AudioSource>().Play();
         gameObject.SetActive(true);
     }
 
