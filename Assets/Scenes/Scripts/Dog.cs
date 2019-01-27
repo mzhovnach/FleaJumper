@@ -38,7 +38,7 @@ public class Dog : MonoBehaviour {
         starttime += Time.deltaTime;
 
        // milliseconds = (int)(Time.timeSinceLevelLoad * 1000f) % 1000;
-        fury = starttime/10;
+        fury = starttime/30;
         
     }
 
