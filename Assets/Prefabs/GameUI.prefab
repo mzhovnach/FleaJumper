@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 222253311027206354}
   - component: {fileID: 114318585574754356}
   - component: {fileID: 114972418890823844}
-  - component: {fileID: 82688421499045414}
+  - component: {fileID: 82233081181973428}
   m_Layer: 5
   m_Name: LooseWindow
   m_TagString: Untagged
@@ -205,7 +205,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &82688421499045414
+--- !u!82 &82233081181973428
 AudioSource:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
