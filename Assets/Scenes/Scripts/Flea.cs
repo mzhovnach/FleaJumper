@@ -91,13 +91,19 @@ public class Flea : MonoBehaviour {
 
     public void SetArrowVisible(bool visible)
     {
-        Arrow.gameObject.SetActive(visible);
-        Arrow.transform.localScale = Vector3.zero;
+        if (Arrow)
+        {
+            Arrow.gameObject.SetActive(visible);
+            Arrow.transform.localScale = Vector3.zero;
+        }
     }
 
     public void SetArrowDirection(Vector3 direction)
     {
-        Arrow.transform.localScale = new Vector3(1.0f, direction.magnitude * 50.0f, 1.0f);
-        Arrow.transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+        if (Arrow)
+        {
+            Arrow.transform.localScale = new Vector3(1.0f, direction.magnitude * 50.0f, 1.0f);
+            Arrow.transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+        }
     }
 }

@@ -15,7 +15,7 @@ public class GameBoard : MonoBehaviour {
     public UIController uiController;
 
     private float _timer = 0.0f;
-    private float _spawnTime = 4.0f;
+    private float _spawnTime = 2.0f;
 
 	// Use this for initialization
 	void Start () {
