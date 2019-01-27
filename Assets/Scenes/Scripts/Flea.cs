@@ -14,6 +14,7 @@ public class Flea : MonoBehaviour {
 
     private State _state;
     private Rigidbody2D _rigidBody;
+    private AudioSource _audioSuurce;
     private BoxCollider2D _collider;
     private Dog _prevDog;
     private float _flyingTime;
@@ -27,6 +28,7 @@ public class Flea : MonoBehaviour {
         _state = State.Attached;
         _rigidBody = GetComponent<Rigidbody2D>();
         _collider = GetComponent<BoxCollider2D>();
+        _audioSuurce = GetComponent<AudioSource>();
         Arrow.SetActive(false);
     }
 
@@ -57,6 +59,7 @@ public class Flea : MonoBehaviour {
         _rigidBody.velocity = Vector2.zero;
         _rigidBody.simulated = false;
         _prevDog = dog;
+        _audioSuurce.Play();
     }
 
     public void JumpIntoDirection(Vector2 direction)
