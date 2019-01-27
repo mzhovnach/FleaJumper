@@ -20,15 +20,15 @@ public class UIController : MonoBehaviour
     public float _fillness = 0;
     [HideInInspector]
     public Dog _currentDog;
-    public double _score;
+    public double _score = 0;
     public Text _scoreText;
 
     [SerializeField] private Image HealthBar;
 
     private void Start()
     {
-        _score = 0;
-        _scoreText = Score.GetComponent<Text>();
+        // _score = 0;
+        //_scoreText = Score.GetComponent<Text>();
     }
     //[SerializeField] private Image smile;
     // [SerializeField] private List<Sprite> smileList;
@@ -58,8 +58,8 @@ public class UIController : MonoBehaviour
             _currentDog = currentDog;
             _fillness = _currentDog.fury;
             HealthBar.fillAmount = _fillness;
-        _score += Time.deltaTime*2;
-        Score.GetComponent<Text>().text = (Math.Truncate(_score)).ToString();
+            _score += Time.deltaTime * 2;
+            Score.GetComponent<Text>().text = (Math.Truncate(_score)).ToString();
         }
         //_scoreText.text = (Math.Truncate(_score)).ToString();
         //CheckState();
