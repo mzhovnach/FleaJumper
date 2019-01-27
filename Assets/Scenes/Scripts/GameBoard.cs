@@ -69,8 +69,6 @@ public class GameBoard : MonoBehaviour {
             DogSpawner.SpawnRandomDog();
         }
         uiController.SetParametres(_dogHost);
-
-
     }
 
     public void SetNewHost(Dog newHostDog)

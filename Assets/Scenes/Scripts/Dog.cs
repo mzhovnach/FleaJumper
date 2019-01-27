@@ -14,7 +14,7 @@ public class Dog : MonoBehaviour {
     // Use this for initialization
     void Start () {
         _rigidbody.velocity = new Vector2(_speed, 0.0f);
-        Renderer.sortingOrder = -(int)(transform.position.y * 100.0f);
+        Renderer.sortingOrder = -(int)(transform.position.y * 10.0f);
         Vector3 scale = transform.localScale;
         scale.x = _rigidbody.velocity.x < 0 ? 1.0f : -1.0f;
         transform.localScale = scale;
