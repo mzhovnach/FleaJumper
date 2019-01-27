@@ -18,10 +18,11 @@ public class LooseWindowController : MonoBehaviour {
     public void Show()
     {
         gameObject.SetActive(true);
+	    gameObject.GetComponent<AudioSource>().Play();
     }
 
     public void OnRestartButtonPressed()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 }

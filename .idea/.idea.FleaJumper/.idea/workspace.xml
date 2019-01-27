@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e7eb644-8bd3-4456-8fdc-f819856486ca" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Prefabs/Flea.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/Flea.prefab" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Prefabs/GameUI.prefab" afterPath="$PROJECT_DIR$/Assets/Prefabs/GameUI.prefab" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/Scripts/Flea.cs" afterPath="$PROJECT_DIR$/Assets/Scenes/Scripts/Flea.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Scenes/Scripts/LooseWindowController.cs" afterPath="$PROJECT_DIR$/Assets/Scenes/Scripts/LooseWindowController.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,14 +28,31 @@
       <file leaf-file-name="MouseOver.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/MouseOver.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="323">
+              <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="25" />
               <folding>
                 <marker date="1548553650949" expanded="true" signature="6:129" ph="..." />
                 <marker date="1548553650949" expanded="true" signature="170:499" ph="{...}" />
                 <marker date="1548553650949" expanded="true" signature="249:322" ph="{...}" />
                 <marker date="1548553650949" expanded="true" signature="350:410" ph="{...}" />
                 <marker date="1548553650949" expanded="true" signature="439:497" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LooseWindowController.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scenes/Scripts/LooseWindowController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="25" column="60" lean-forward="false" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+              <folding>
+                <marker date="1548565633411" expanded="false" signature="6:113" ph="..." />
+                <marker date="1548565633411" expanded="true" signature="166:528" ph="{...}" />
+                <marker date="1548565633411" expanded="true" signature="216:223" ph="{...}" />
+                <marker date="1548565633411" expanded="true" signature="278:285" ph="{...}" />
+                <marker date="1548565633411" expanded="true" signature="309:409" ph="{...}" />
+                <marker date="1548565633411" expanded="true" signature="451:526" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -68,7 +84,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DogSpawner.cs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DogSpawner.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scenes/Scripts/DogSpawner.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -90,6 +106,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/MouseOver.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Scripts/LooseWindowController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Scripts/Flea.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Scripts/DogSpawner.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -98,6 +115,7 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/MouseOver.cs" />
         <option value="$PROJECT_DIR$/Assets/Scenes/Scripts/Flea.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/Scripts/LooseWindowController.cs" />
       </list>
     </option>
   </component>
@@ -180,7 +198,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6008000" />
+    <option name="totallyTimeSpent" value="6972000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -228,20 +246,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/MouseOver.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <marker date="1548553650949" expanded="true" signature="6:129" ph="..." />
-            <marker date="1548553650949" expanded="true" signature="170:499" ph="{...}" />
-            <marker date="1548553650949" expanded="true" signature="249:322" ph="{...}" />
-            <marker date="1548553650949" expanded="true" signature="350:410" ph="{...}" />
-            <marker date="1548553650949" expanded="true" signature="439:497" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scenes/Scripts/Flea.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -275,6 +279,35 @@
             <marker date="1548524967072" expanded="true" signature="120:981" ph="{...}" />
             <marker date="1548524967072" expanded="true" signature="269:898" ph="{...}" />
             <marker date="1548524967072" expanded="true" signature="931:979" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/MouseOver.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="25" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <marker date="1548553650949" expanded="true" signature="6:129" ph="..." />
+            <marker date="1548553650949" expanded="true" signature="170:499" ph="{...}" />
+            <marker date="1548553650949" expanded="true" signature="249:322" ph="{...}" />
+            <marker date="1548553650949" expanded="true" signature="350:410" ph="{...}" />
+            <marker date="1548553650949" expanded="true" signature="439:497" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scenes/Scripts/LooseWindowController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="60" lean-forward="false" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+          <folding>
+            <marker date="1548565633411" expanded="false" signature="6:113" ph="..." />
+            <marker date="1548565633411" expanded="true" signature="166:528" ph="{...}" />
+            <marker date="1548565633411" expanded="true" signature="216:223" ph="{...}" />
+            <marker date="1548565633411" expanded="true" signature="278:285" ph="{...}" />
+            <marker date="1548565633411" expanded="true" signature="309:409" ph="{...}" />
+            <marker date="1548565633411" expanded="true" signature="451:526" ph="{...}" />
           </folding>
         </state>
       </provider>
