@@ -37,7 +37,7 @@ public class Flea : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Renderer.sortingOrder = -(int)(transform.position.y * 100.0f);
+        //Renderer.sortingOrder = -(int)(transform.position.y * 100.0f);
         if (_state == State.Flying)
         {
             _flyingTime += Time.deltaTime;
@@ -65,6 +65,7 @@ public class Flea : MonoBehaviour {
         _state = State.Flying;
         _rigidBody.simulated = true;
         _rigidBody.AddForce(direction * 1500.0f);
+        Renderer.GetComponent<AudioSource>().Play();
     }
 
     void OnTriggerEnter2D(Collider2D col)

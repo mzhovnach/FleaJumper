@@ -6,12 +6,13 @@ public class GameBoard : MonoBehaviour {
 
     public SmoothCamera2D CameraFollower;
     public BackgroundScroller BackgroundScroller;
-    private Dog _dogHost;
+    public Dog _dogHost;
     public DogSpawner DogSpawner;
     public InputController InputController;
     public Flea Flea;
     public GameObject WorldObject;
     public LooseWindowController LooseWindow;
+    public UIController uiController;
 
     private float _timer = 0.0f;
     private float _spawnTime = 4.0f;
@@ -67,8 +68,10 @@ public class GameBoard : MonoBehaviour {
             _timer = 0.0f;
             DogSpawner.SpawnRandomDog();
         }
+        uiController.SetParametres(_dogHost);
 
-	}
+
+    }
 
     public void SetNewHost(Dog newHostDog)
     {
